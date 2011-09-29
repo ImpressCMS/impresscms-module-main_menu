@@ -1,0 +1,14 @@
+<ul id="menu3">
+	<{foreach item=main_menu_item from=$block.items}>
+		<li>
+			<{if $main_menu_item.enabled}>
+				<a href="<{$main_menu_item.true_url}>" target="<{$main_menu_item.target}>" title="<{if $main_menu_item.title}><{$main_menu_item.title}><{else}><{$main_menu_item.name}><{/if}>" style="background-repeat: no-repeat; padding-left: 16px; <{if $main_menu_item.image_normal}>background-image: url('<{if $main_menu_item.image_active}><{$main_menu_item.image_active}><{else}><{$main_menu_item.image_normal}><{/if}>');<{/if}>" <{if $main_menu_item.image_over}>onmouseover="this.style.backgroundImage='<{$main_menu_item.image_over}>';"<{/if}> class="menuItem-<{$main_menu_item.name|replace:' ':'-'}> <{if $main_menu_item.selected}> selected<{/if}>">
+					<{$main_menu_item.name}>
+				</a>
+			<{else}>
+				<{$main_menu_item.name}>
+			<{/if}>
+		</li>
+	<{/foreach}>
+</ul>
+<div id="menu3_end"></div>
